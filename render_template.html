@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+</head>
+<body>
+    <h2>Enter Student Scores</h2>
+    <form action="/predict" method="post">
+        <label for="math">Math Score:</label>
+        <input type="number" name="math" required><br><br>
+
+        <label for="reading">Reading Score:</label>
+        <input type="number" name="reading" required><br><br>
+
+        <label for="writing">Writing Score:</label>
+        <input type="number" name="writing" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>{{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
